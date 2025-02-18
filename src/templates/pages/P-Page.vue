@@ -54,20 +54,15 @@ export default {
 
 	mixins: [waitRequest],
 
+	watch: {
+    currentLang() {
+      this.fetchPageData();
+    }, 
+	},
+
   mounted() {
-		this.waitRequest(() => {
-			return Api.post('page/page', {
-					url: this.$route.path,
-					lang: this.currentLang
-				})
-				.then((result) => {
-					this.content = result.data
-					console.log(this.content)
-				})
-				.catch((error) => {
-					console.log(error);
-				});
-		});
+		this.fetchPageData()
+		console.log(this.$route);
   },
 
 	computed: {
@@ -79,6 +74,22 @@ export default {
   methods: {
 		stripDomain,
 		stripLang,
+
+		fetchPageData() {
+			this.waitRequest(() => {
+				return Api.post('page/page', {
+						url: this.$route.path,
+						lang: this.currentLang
+					})
+					.then((result) => {
+						this.content = result.data
+						console.log(this.content)
+					})
+					.catch((error) => {
+						console.log(error);
+					});
+			});
+		}
   }
 }
 </script>

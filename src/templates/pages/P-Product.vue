@@ -219,7 +219,8 @@ export default {
       if (!this.$refs.relatedProductsSection || !this.$refs.relatedProductsSection.$el) {
         return; 
       }
-
+      
+      // console.log(this.product.id);
       const section = this.$refs.relatedProductsSection.$el;
       const rect = section.getBoundingClientRect();
       const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;

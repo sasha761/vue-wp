@@ -195,14 +195,13 @@ export default {
 }
 </script>
 
-<style lang="scss">
-  .VuePagination {
-    .VuePagination__count {
-      display: none;
-    }
+<style>
+.VuePagination .VuePagination__count {
+  display: none;
+}
 
-    button {
-      color: white;
-    }
-  }
+.VuePagination button {
+  color: white;
+}
+  
 </style>

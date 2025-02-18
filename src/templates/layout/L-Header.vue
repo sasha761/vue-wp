@@ -52,7 +52,7 @@
 <script>
 
 import { mapMutations, mapActions, mapGetters } from 'vuex';
-import { extractProductName, stripSlug, stripLang } from '@/assets/js/utils.js';
+import { stripSlug, stripLang } from '@/assets/js/utils.js';
 
 import stringConfig from '@/config/stringConfig.js'
 import CMenu from '@/templates/components/C-Menu.vue';
@@ -123,7 +123,7 @@ export default {
 
     updateLanguage(newLang) {
       this.setLanguageInStore(newLang); // Обновляем Store
-      console.log('Текущий язык изменён:', this.currentLang);
+      // console.log('Текущий язык изменён:', this.currentLang);
     },
 
     fetchMenu() {
@@ -135,7 +135,6 @@ export default {
       this.$popup.open('PopupMobileMenu', {menu: this.getMobileMenu})
     },
 
-    extractProductName,
     stripSlug,
     stripLang,
   }

@@ -61,7 +61,7 @@ export default {
       type: Array 
     },
     totalAmount: {
-      type: String
+      type: Number
     },
     cartUrl: {
       type: String
